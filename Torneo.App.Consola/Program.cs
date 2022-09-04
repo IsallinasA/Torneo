@@ -16,10 +16,10 @@ private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio()
                     break;
             }
         }
-        while(opcion!=0); 
-
+        while(opcion!=0);
     }
-        private static void AddMunicipio() {
+
+      private static void AddMunicipio() {
             Console.WriteLine("Ingrese el nombre del Municipio");
             string nombre=Console.ReadLine();
             
@@ -27,6 +27,6 @@ private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio()
             Nombre = nombre,
             };
             _repoMunicipio.AddMunicipio(municipio);
-        }
+        }  
     }
 }
