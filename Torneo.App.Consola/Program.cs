@@ -12,6 +12,7 @@ private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
             Console.WriteLine("1. Insertar Municipio");
             Console.WriteLine("2. Insertar Director Tecnico");
             Console.WriteLine("3. Insertar Equipo");
+            Console.WriteLine("4. Mostrar Municipio");
             Console.WriteLine("0. Salir");
             Console.WriteLine("Seleccione una opcion");
             opcion=Int32.Parse(Console.ReadLine());
@@ -24,6 +25,9 @@ private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
                     break;
                 case 3:
                     AddEquipo();
+                    break;
+                case 4:
+                    GetAllMunicipios();
                     break;
             }
         }
@@ -68,7 +72,11 @@ private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
             };
             _repoEquipo.AddEquipo(equipo, idMunicipio, idDT);
         }
-
+        private static void GetAllMunicipios() {
+            foreach (var municipio in _repoMunicipio.GetAllMunicipios()){
+            Console.WriteLine(municipio.Id + " " + municipio.Nombre);
+            }
+        }
 
     }
 }

@@ -9,5 +9,9 @@ public class RepositorioMunicipio : IRepositorioMunicipio{
         _dataContext.SaveChanges();
         return municipioInsertado.Entity;
         }
+        public IEnumerable<Municipio> GetAllMunicipios(){
+            return _dataContext.Municipios;
+        }
+
     }
 }
