@@ -11,6 +11,7 @@ private static IRepositorioDT _repoDT = new RepositorioDT();
             Console.WriteLine("1. Insertar Municipio");
             Console.WriteLine("2. Insertar Director Tecnico");
             Console.WriteLine("0. Salir");
+            Console.WriteLine("Seleccione una opcion");
             opcion=Int32.Parse(Console.ReadLine());
             switch(opcion){
                 case 1:
