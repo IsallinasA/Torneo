@@ -6,6 +6,7 @@ private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio()
 private static IRepositorioDT _repoDT = new RepositorioDT();
 private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
 private static IRepositorioPosicion _repoPosicion = new RepositorioPosicion();  
+private static IRepositorioJugador _repoJugador = new RepositorioJugador();
     static void Main(string[] args) {
         int opcion=0;
 
@@ -14,10 +15,11 @@ private static IRepositorioPosicion _repoPosicion = new RepositorioPosicion();
             Console.WriteLine("2. Insertar Director Tecnico");
             Console.WriteLine("3. Insertar Equipo");
             Console.WriteLine("4. Insertar Posicion"); 
-            Console.WriteLine("5. Mostrar Municipios");
-            Console.WriteLine("6. Mostrar Directores Tecnicos");
-            Console.WriteLine("7. Mostrar Equipos");
-            Console.WriteLine("8. Mostrar Posiciones");
+            Console.WriteLine("5. Insertar Jugador");
+            Console.WriteLine("6. Mostrar Municipios");
+            Console.WriteLine("7. Mostrar Directores Tecnicos");
+            Console.WriteLine("8. Mostrar Equipos");
+            Console.WriteLine("9. Mostrar Posiciones");
             Console.WriteLine("0. Salir");
             Console.WriteLine("Seleccione una opcion");
             opcion=Int32.Parse(Console.ReadLine());
@@ -35,12 +37,15 @@ private static IRepositorioPosicion _repoPosicion = new RepositorioPosicion();
                     AddPosicion();
                     break;
                 case 5:
-                    GetAllMunicipios();
+                    AddJugador();
                     break;
                 case 6:
-                    GetAllDTs();
+                    GetAllMunicipios();
                     break;
                 case 7:
+                    GetAllDTs();
+                    break;
+                case 8:
                     GetAllEquipos();
                     break;
             }
@@ -96,7 +101,25 @@ private static IRepositorioPosicion _repoPosicion = new RepositorioPosicion();
                 Nombre = nombre,
             };
             _repoPosicion.AddPosicion(posicion);
-        }            
+        } 
+
+        private static void AddJugador(){
+            Console.WriteLine("Ingrese el nombre del Jugador");
+            string nombre=Console.ReadLine();
+            Console.WriteLine("Ingrese el Numero del Jugador");
+            int numero= Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el ID del Equipo");
+            int idEquipo= Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el id de la Posicion");
+            int idPosicion = Int32.Parse(Console.ReadLine());
+            
+            var jugador = new Jugador {
+            Nombre = nombre,
+            Numero = numero,
+            
+            };
+            _repoJugador.AddJugador(jugador, idEquipo, idPosicion);
+        }           
 
         private static void GetAllMunicipios() {
             foreach (var municipio in _repoMunicipio.GetAllMunicipios()){
