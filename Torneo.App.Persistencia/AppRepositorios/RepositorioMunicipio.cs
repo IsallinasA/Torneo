@@ -12,6 +12,9 @@ public class RepositorioMunicipio : IRepositorioMunicipio{
         public IEnumerable<Municipio> GetAllMunicipios(){
             return _dataContext.Municipios;
         }
-
+        public Municipio GetMunicipio(int idMunicipio) {
+            var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
+            return municipioEncontrado;
+        }
     }
 }
