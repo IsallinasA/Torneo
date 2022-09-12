@@ -1,0 +1,21 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.DTs.IndexModel
+@{
+}
+<h1>Listado de DTs</h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var dt in Model.dts){
+            <tr>
+                <th scope="row">@dt.Id</th>
+                <td>@dt.Nombre</td>
+            </tr>
+        }
+    </tbody>
+</table>
