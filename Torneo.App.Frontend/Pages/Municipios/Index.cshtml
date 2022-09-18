@@ -2,27 +2,31 @@
 @model Torneo.App.Frontend.Pages.Municipios.IndexModel
 @{
 }
-<a class="btn btn-primary" asp-page="./Create">Crear municipio</a>
+<a class="btn btn-success btn-lg" asp-page="./Create">Crear municipio</a>
 <h1>Listado de municipios</h1>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var municipio in Model.municipios){
-            <tr>
-                <th scope="row">@municipio.Id</th>
-                <td>@municipio.Nombre</td>
-                <td>
-                    <a class="btn btn-outline-dark" asp-page="./Details" asp-route-id="@municipio.Id">
-                        Detalle
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
+<table class="table table-striped table-hover">
+<thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Acciones</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var municipio in Model.municipios)
+    {
+    <tr>
+      <th scope="row">@municipio.Id</th>
+      <td>@municipio.Nombre</td>
+
+    <td>
+      <a class="btn btn-outline-dark" asp-page="./Details" asp-route-id="@municipio.Id">
+      Detalle
+      </a>
+    </td>
+
+    </tr>
+    }
+  </tbody>
 </table>

@@ -2,29 +2,33 @@
 @model Torneo.App.Frontend.Pages.Equipos.IndexModel
 @{
 }
+<a class="btn btn-success btn-lg" asp-page="./Create">Crear Equipo</a>
 <h1>Listado de equipos</h1>
-    <table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Municipio</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var equipo in Model.equipos)
-        {
-        <tr>
-            <th scope="row">@equipo.Id</th>
-            <td>@equipo.Nombre</td>
-            <td>@equipo.Municipio.Nombre</td>  
-        <td>
-            <a class="btn btn-outline-dark" asp-page="./Details" asp-route-id="@equipo.Id">
-                Detalle
-            </a>
-        </td>
-        </tr>
-        }
-    </tbody>
+<table class="table table-striped table-hover">
+<thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Municipio</th>
+      <th scope="col">Acciones</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var equipo in Model.equipos)
+    {
+    <tr>
+      <th scope="row">@equipo.Id</th>
+      <td>@equipo.Nombre</td>
+      <td>@equipo.Municipio.Nombre</td>  
+
+    <td>
+      <a class="btn btn-outline-dark" asp-page="./Details" asp-route-id="@equipo.Id">
+      Detalle
+      </a>
+    </td>
+      
+    </tr>
+    }
+  </tbody>
 </table>

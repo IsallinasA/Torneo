@@ -3,22 +3,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
 
-
-namespace Torneo.App.Frontend.Pages.Equipos
+namespace Torneo.App.Frontend.Pages.Partidos
 {
     public class DetailsModel : PageModel
     {
-        private readonly IRepositorioEquipo _repoEquipo;
-        public Equipo equipo {get; set;}
+        private readonly IRepositorioPartido _repoPartido;
+        public Partido partido {get; set;}
 
-        public DetailsModel(IRepositorioEquipo repoEquipo)
+        public DetailsModel(IRepositorioPartido repoPartido)
         {
-            _repoEquipo = repoEquipo;
+            _repoPartido = repoPartido;
         }
         public IActionResult OnGet(int id)
         {
-            equipo = _repoEquipo.GetEquipo(id);
-            if (equipo == null)
+            partido = _repoPartido.GetPartido(id);
+            if (partido == null)
             {
             return NotFound();
             }

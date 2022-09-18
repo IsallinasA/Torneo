@@ -3,20 +3,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
 
-namespace Torneo.App.Frontend.Pages.Municipios
+namespace Torneo.App.Frontend.Pages.DTs
 {
     public class DetailsModel : PageModel
     {
-        private readonly IRepositorioMunicipio _repoMunicipio;
-        public Municipio municipio {get; set;}
-        public DetailsModel(IRepositorioMunicipio repoMunicipio)
+        private readonly IRepositorioDT _repoDT;
+        public DirectorTecnico directortecnico {get; set;}
+        public DetailsModel(IRepositorioDT repoDT)
         {
-            _repoMunicipio = repoMunicipio;
+            _repoDT = repoDT;
         }
         public IActionResult OnGet(int id)
         {
-            municipio = _repoMunicipio.GetMunicipio(id);
-            if (municipio == null)
+            directortecnico = _repoDT.GetDirectorTecnico(id);
+            if (directortecnico == null)
             {
                 return NotFound();
             }

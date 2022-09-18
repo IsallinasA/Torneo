@@ -1,0 +1,33 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Jugadores.DetailsModel
+@{
+}
+<h1>Detalle del jugador</h1>
+<table class="table table-hover">
+<tr>
+    <th scope="col">Id</th>
+    <td>@Model.jugador.Id</td>
+</tr>
+
+<tr>
+    <th scope="col">Nombre</th>
+    <td>@Model.jugador.Nombre</td>
+</tr>
+
+<tr>
+    <th scope="col">Número</th>
+    <td>@Model.jugador.Numero</td>
+</tr>
+
+<tr>
+    <th scope="col">Equipo</th>
+    <td>@Model.jugador.Equipo.Nombre</td>
+</tr>
+
+<tr>
+    <th scope="col">Posicion</th>
+    <td>@Model.jugador.Posicion.Nombre</td>
+</tr>
+
+</table>
+<a class="btn btn-outline-dark" asp-page="./Index">Volver</a>

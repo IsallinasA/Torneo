@@ -1,0 +1,14 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Posiciones.CreateModel
+@{
+}
+<h1>Nueva Posicion</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="posicion.Nombre"></label>
+        <input asp-for="posicion.Nombre" class="form-control">
+        <span class="text-danger" asp-validation-for="posicion.Nombre"></span>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Crear Posicion</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
