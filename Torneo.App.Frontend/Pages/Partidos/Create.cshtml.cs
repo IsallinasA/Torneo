@@ -25,10 +25,10 @@ namespace Torneo.App.Frontend.Pages.Partidos
             equipos = _repoEquipo.GetAllEquipos();
         }
 
-        public IActionResult OnPost(Partido partido, int idEquipoLocal, int idEquipoVisitante)
-        {
-            _repoPartido.AddPartido(partido, idEquipoLocal, idEquipoVisitante);
-            return RedirectToPage("Index");
-        }
+        //public IActionResult OnPost(Partido partido, int idEquipoLocal, int idEquipoVisitante){
+            
+            //_repoPartido.AddPartido(partido, idEquipoLocal, idEquipoVisitante);
+          //      return RedirectToPage("Index");
+        //}
     }
 }
