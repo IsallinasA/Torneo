@@ -24,11 +24,5 @@ namespace Torneo.App.Frontend.Pages.Partidos
             partido = new Partido();
             equipos = _repoEquipo.GetAllEquipos();
         }
-
-        //public IActionResult OnPost(Partido partido, int idEquipoLocal, int idEquipoVisitante){
-            
-            //_repoPartido.AddPartido(partido, idEquipoLocal, idEquipoVisitante);
-          //      return RedirectToPage("Index");
-        //}
     }
 }

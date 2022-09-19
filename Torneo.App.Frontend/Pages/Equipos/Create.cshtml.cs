@@ -31,7 +31,6 @@ namespace Torneo.App.Frontend.Pages.Equipos
             municipios = _repoMunicipio.GetAllMunicipios();
             dts = _repoDT.GetAllDTs();
         }
-
         public IActionResult OnPost(Equipo equipo, int idMunicipio, int idDT)
         {
             _repoEquipo.AddEquipo(equipo, idMunicipio, idDT);
